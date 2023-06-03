@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  font-family: "Rubik", sans-serif !important;
+  font-size: 18px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+label, input, select {
+  display: block;
+}
+label {
+  margin-top: 10px;
+}
+input, select {
+  /* padding: 10px; */
+  /* margin-top: 10px;
+  margin-bottom: 20px; */
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: green;
+  border: 1px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+Button {
+  margin: 5px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search {
+  width: 290px;
+  
+}
+
+Modal.Body {
+  align-items: center;
+  justify-content: space-around;
+}
+
+h4, Table, Button, form {
+  font-family: "Rubik", sans-serif;
+}
+
+
+@media screen and (max-width: 660px) {
+  :root {
+    font-size: 10px;
+  }
+}
