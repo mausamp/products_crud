@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { crudApi } from "../services/ApiQuery";
+import { crudApi } from "./ApiQuery";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
