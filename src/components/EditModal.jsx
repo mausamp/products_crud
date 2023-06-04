@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
-import { useEditOneMutation } from '../services/ApiQuery';
+import { useEditOneMutation, useGetAllQuery } from '../services/ApiQuery';
 
 export default function EditModal(props) {
 
@@ -36,8 +36,7 @@ export default function EditModal(props) {
     if(isSuccess) {
       resetValues()
       alert("Edit Successful!")
-      props.setEditModal(false)
-
+      props.seteditmodal(false)
     }
 
     if(isError) {
@@ -57,7 +56,8 @@ export default function EditModal(props) {
   
   return (
     <Modal
-      {...props}
+      show= {props.show}
+      onHide={props.onHide}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered

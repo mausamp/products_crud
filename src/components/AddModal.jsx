@@ -38,10 +38,11 @@ export default function AddModal(props) {
     setCreatedBy('')
     setStatus('')
   }
-   // console.log(status)
+
   return (
     <Modal
-      {...props}
+      show= {props.show}
+      onHide={props.onHide}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered

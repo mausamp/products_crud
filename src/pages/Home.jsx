@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { useDeleteOneMutation, useGetAllQuery } from '../services/ApiQuery';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddModal from '../components/AddModal';
 import EditModal from '../components/EditModal'
 
@@ -17,6 +17,13 @@ export default function Home() {
         content = (response.data.products) 
         // console.log(filtered)
     }    
+
+    useEffect(() => {
+        if(!response.isLoading){
+            setFiltered(content)
+        }
+        console.log(filtered)
+    }, [response])
 
     const getStatus = (text) => {
         switch (text) {
@@ -48,11 +55,11 @@ export default function Home() {
     const handleSearch = (e) => {
         const searchText = e.target.value.toLowerCase()
         setQuery(searchText)
-        if(query.length > 0) {
-            setSearch(true)
-        } else {
-            setSearch(false)
-        }
+        // if(query.length === 0) {
+        //     setSearch(false)
+        // } else {
+        //     setSearch(true)
+        // }
 
         const filteredItems = content.filter((item) => {
             return (
@@ -62,6 +69,7 @@ export default function Home() {
         })
         setFiltered(filteredItems)
     }
+    // setFiltered(content)
 
     return (
         <div>
@@ -87,7 +95,7 @@ export default function Home() {
                 </tr>
                 </thead>
                 <tbody>
-                {response.isSuccess && (search ? filtered: content).map((product) => 
+                {response.isSuccess && filtered.map((product) => 
                     <tr key={product.id}>
                         <td>{product.product_name}</td>
                         <td>{product.category_name}</td>
@@ -120,7 +128,7 @@ export default function Home() {
                 description={editProduct.description}
                 created={editProduct.created_by}
                 status={editProduct.status}
-                setEditModal={setEditModal}
+                seteditmodal={setEditModal}
             />}
         </div>
 

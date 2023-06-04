@@ -6,6 +6,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
+  color: hsl(0, 0%, 17%)
 }
 label, input, select {
   display: block;
@@ -47,18 +48,19 @@ Button {
   
 }
 
-Modal.Body {
+Modal {
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 h4, Table, Button, form {
   font-family: "Rubik", sans-serif;
 }
 
-
 @media screen and (max-width: 660px) {
   :root {
     font-size: 10px;
   }
+
 }
